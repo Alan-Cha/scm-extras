@@ -1,0 +1,16 @@
+{
+  "card_sizes": {
+    "mtg": {
+      "width": "2.5in",
+      "height": "3.5in",
+      "radius": "2.5mm",
+      "aliases": ["magic", "magic_the_gathering"]
+    },
+    "sorcery": {
+      "width": "2.61in",
+      "height": "3.74in",
+      "radius": "3.5mm",
+      "aliases": ["sorcery_contested_realm"]
+    }
+  }
+}

@@ -2,7 +2,7 @@
 
 Additional cutting templates for [Silhouette Card Maker](https://github.com/alan-cha/silhouette-card-maker).
 
-`assets/layouts.json` is a drop-in superset of SCM's `assets/layouts.json` — it contains all standard sizes plus game-specific ones. `generate.py` uses it to produce templates for the extra card sizes, outputting to `cutting_templates/games/`.
+Extra card sizes are defined in `assets/layouts-extra.json`. SCM automatically detects and merges this file if it's present in its `assets/` directory, so all SCM scripts (DXF generation, PDF creation, etc.) gain access to the extra sizes with no duplication of paper sizes or other base data.
 
 ## Setup
 
@@ -17,27 +17,26 @@ Documents/
 Install SCM dependencies as described in its README, then from this repo:
 
 ```bash
-python generate.py               # generate missing templates
-python generate.py --all         # regenerate all
-python generate.py --card mtg    # single card size
+python generate.py        # generate missing templates (symlinks layouts-extra.json into SCM)
+python generate.py --all  # regenerate all
 ```
+
+To use SCM's tools directly (e.g. `create_pdf.py`) with the extra sizes, just ensure the symlink exists first by running `generate.py` once.
 
 ## Adding a new card size
 
-1. Add an entry to `assets/layouts.json` under `card_sizes` (same schema as SCM):
-   ```json
-   "my_game": {
-     "width": "2.5in",
-     "height": "3.5in",
-     "radius": "2.5mm",
-     "aliases": ["my_game_alias"]
-   }
-   ```
-2. Run `python generate.py --card my_game`.
+Add an entry to `assets/layouts-extra.json` under `card_sizes`:
 
-## Keeping in sync with SCM
+```json
+"my_game": {
+  "width": "2.5in",
+  "height": "3.5in",
+  "radius": "2.5mm",
+  "aliases": ["my_game_alias"]
+}
+```
 
-When SCM's `assets/layouts.json` is updated, re-apply the extra card sizes from this repo on top of the new base.
+Then run `python generate.py`.
 
 ## Extra card sizes
 
