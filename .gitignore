@@ -1,0 +1,7 @@
+dxf/
+*.dxf
+*.studio3
+__pycache__/
+*.py[cod]
+.venv/
+venv/

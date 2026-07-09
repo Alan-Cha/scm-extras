@@ -1,0 +1,10 @@
+{
+  "name": "Magic: The Gathering",
+  "card_size": {
+    "width": "2.5in",
+    "height": "3.5in",
+    "radius": "2.5mm"
+  },
+  "paper_sizes": ["letter", "a4", "tabloid"],
+  "variants": ["default", "borderless"]
+}
