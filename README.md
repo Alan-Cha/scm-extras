@@ -2,6 +2,8 @@
 
 Additional cutting templates for [Silhouette Card Maker](https://github.com/alan-cha/silhouette-card-maker).
 
+`assets/layouts.json` is a drop-in superset of SCM's `assets/layouts.json` — it contains all standard sizes plus game-specific ones. `generate.py` uses it to produce templates for the extra card sizes, outputting to `cutting_templates/games/`.
+
 ## Setup
 
 Clone both repos as siblings:
@@ -12,38 +14,34 @@ Documents/
 └── scm-extras/
 ```
 
-Install SCM dependencies as described in its README, then run from this repo:
+Install SCM dependencies as described in its README, then from this repo:
 
 ```bash
-python generate.py                                         # generate all packs
-python generate.py --pack games/magic_the_gathering        # one pack only
-python generate.py --all                                   # regenerate existing files
+python generate.py               # generate missing templates
+python generate.py --all         # regenerate all
+python generate.py --card mtg    # single card size
 ```
 
-Generated DXF files are written to each pack's `dxf/` directory (gitignored).
+## Adding a new card size
 
-## Adding a pack
+1. Add an entry to `assets/layouts.json` under `card_sizes` (same schema as SCM):
+   ```json
+   "my_game": {
+     "width": "2.5in",
+     "height": "3.5in",
+     "radius": "2.5mm",
+     "aliases": ["my_game_alias"]
+   }
+   ```
+2. Run `python generate.py --card my_game`.
 
-Create a directory under `packs/` with a `pack.json`:
+## Keeping in sync with SCM
 
-```json
-{
-  "name": "My Game",
-  "card_size": {
-    "width": "2.5in",
-    "height": "3.5in",
-    "radius": "2.5mm"
-  },
-  "paper_sizes": ["letter", "a4"],
-  "variants": ["default", "borderless"]
-}
-```
+When SCM's `assets/layouts.json` is updated, re-apply the extra card sizes from this repo on top of the new base.
 
-Then run `python generate.py --pack <path/to/your/pack>`.
+## Extra card sizes
 
-## Packs
-
-| Pack | Card size | Corner radius |
-|------|-----------|---------------|
-| Magic: The Gathering | 2.5 × 3.5 in | 2.5 mm |
-| Sorcery: Contested Realm | 2.61 × 3.74 in | 3.5 mm |
+| Name | Dimensions | Corner radius | Game |
+|------|-----------|---------------|------|
+| `mtg` | 2.5 × 3.5 in | 2.5 mm | Magic: The Gathering |
+| `sorcery` | 2.61 × 3.74 in | 3.5 mm | Sorcery: Contested Realm |
