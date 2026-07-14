@@ -44,3 +44,4 @@ Then run `python generate.py`.
 |------|-----------|---------------|------|
 | `mtg` | 2.5 × 3.5 in | 2.5 mm | Magic: The Gathering |
 | `sorcery` | 2.61 × 3.74 in | 3.5 mm | Sorcery: Contested Realm |
+# scm-extras
