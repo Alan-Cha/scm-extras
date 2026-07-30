@@ -12,7 +12,7 @@ Extra card sizes for [Silhouette Card Maker](https://github.com/alan-cha/silhoue
    └── scm-extras/
    ```
 
-2. Copy `scm-extras/assets/layouts_extra.json` into `silhouette-card-maker/assets/extra_layouts/`. No terminal needed — a regular copy-paste in File Explorer/Finder works fine.
+2. Copy `scm-extras/assets/layouts_extra.json` into `silhouette-card-maker/assets/extra_layouts/`.
 
 3. Verify it worked. From `silhouette-card-maker`, run:
 
