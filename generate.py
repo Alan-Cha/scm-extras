@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-Generate DXF cutting templates for extra card sizes defined in assets/layouts-extra.json.
+Generate DXF cutting templates for extra card sizes defined in assets/layouts_extra.json.
 
-Points SCM at this repo's assets/layouts-extra.json (SCM_EXTRA_LAYOUTS) and
+Points SCM at this repo's assets/layouts_extra.json (SCM_EXTRA_LAYOUTS) and
 cutting_templates/ (SCM_CUTTING_TEMPLATES_DIR) via env vars, then runs generate_dxf.py's
 `single --save` once per missing paper/card/variant combination. `--save` persists
 the computed layout (orientation, rows/cols, registration) back into
-layouts-extra.json, so later runs and dxf_to_studio3.py can look it up.
+layouts_extra.json, so later runs and dxf_to_studio3.py can look it up.
 
 Usage:
     python generate.py               # generate missing templates
@@ -26,7 +26,7 @@ from pathlib import Path
 import click
 
 SCRIPT_DIR = Path(__file__).parent
-EXTRA_LAYOUTS = SCRIPT_DIR / "assets" / "layouts-extra.json"
+EXTRA_LAYOUTS = SCRIPT_DIR / "assets" / "layouts_extra.json"
 OUTPUT_DIR = SCRIPT_DIR / "cutting_templates"
 
 SCM_DIR = Path(__file__).parent.parent / "silhouette-card-maker"
@@ -99,7 +99,7 @@ def main(regenerate_all):
                 result = subprocess.run(cmd, cwd=SCM_DIR, capture_output=True, text=True, env=env)
                 if result.returncode == 0:
                     click.echo(f"  [ok]   {name}.dxf")
-                    # single --save updated layouts-extra.json; reload so later
+                    # single --save updated layouts_extra.json; reload so later
                     # combinations in this loop see the up-to-date layouts.
                     extra = load_extra()
                 else:

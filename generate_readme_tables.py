@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate markdown tables for the extra card sizes in assets/layouts-extra.json,
+Generate markdown tables for the extra card sizes in assets/layouts_extra.json,
 in the same format as SCM's own generate_readme_tables.py (whose format_number()
 and load_layout_config() this script reuses directly).
 
@@ -14,7 +14,7 @@ import sys
 from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).parent
-EXTRA_LAYOUTS = SCRIPT_DIR / "assets" / "layouts-extra.json"
+EXTRA_LAYOUTS = SCRIPT_DIR / "assets" / "layouts_extra.json"
 SCM_DIR = Path(__file__).parent.parent / "silhouette-card-maker"
 
 os.environ["SCM_EXTRA_LAYOUTS"] = str(EXTRA_LAYOUTS.resolve())
