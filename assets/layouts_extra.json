@@ -1,8 +1,8 @@
 {
     "card_sizes": {
         "standard_mtg": {
-            "width": "2.5in",
-            "height": "3.5in",
+            "width": "63mm",
+            "height": "88mm",
             "radius": "2.5mm",
             "aliases": [
                 "mtg",
@@ -11,8 +11,8 @@
             ]
         },
         "standard_sorcery": {
-            "width": "2.5in",
-            "height": "3.5in",
+            "width": "63mm",
+            "height": "88mm",
             "radius": "4.5mm",
             "aliases": [
                 "sorcery",
@@ -30,7 +30,7 @@
                     "num_rows": 2,
                     "num_cols": 4,
                     "registration": {
-                        "length": "7.2mm"
+                        "length": "8.04mm"
                     }
                 },
                 "borderless": {
@@ -39,7 +39,7 @@
                     "num_rows": 3,
                     "num_cols": 3,
                     "registration": {
-                        "length": "6.69mm"
+                        "length": "7.45mm"
                     }
                 }
             },
@@ -50,7 +50,7 @@
                     "num_rows": 2,
                     "num_cols": 4,
                     "registration": {
-                        "length": "7.2mm"
+                        "length": "8.04mm"
                     }
                 },
                 "borderless": {
@@ -59,7 +59,7 @@
                     "num_rows": 3,
                     "num_cols": 3,
                     "registration": {
-                        "length": "6.69mm"
+                        "length": "7.45mm"
                     }
                 }
             }
@@ -72,7 +72,7 @@
                     "num_rows": 2,
                     "num_cols": 4,
                     "registration": {
-                        "length": "8.38mm"
+                        "length": "9.4mm"
                     }
                 },
                 "borderless": {
@@ -81,7 +81,7 @@
                     "num_rows": 3,
                     "num_cols": 3,
                     "registration": {
-                        "length": "9.14mm"
+                        "length": "10.5mm"
                     }
                 }
             },
@@ -92,7 +92,7 @@
                     "num_rows": 2,
                     "num_cols": 4,
                     "registration": {
-                        "length": "8.38mm"
+                        "length": "9.4mm"
                     }
                 },
                 "borderless": {
@@ -101,7 +101,7 @@
                     "num_rows": 3,
                     "num_cols": 3,
                     "registration": {
-                        "length": "9.14mm"
+                        "length": "10.5mm"
                     }
                 }
             }
@@ -114,7 +114,7 @@
                     "num_rows": 4,
                     "num_cols": 4,
                     "registration": {
-                        "length": "24.98mm"
+                        "length": "26.84mm"
                     }
                 },
                 "borderless": {
@@ -123,7 +123,7 @@
                     "num_rows": 3,
                     "num_cols": 6,
                     "registration": {
-                        "length": "17.44mm"
+                        "length": "18.97mm"
                     }
                 }
             },
@@ -134,7 +134,7 @@
                     "num_rows": 4,
                     "num_cols": 4,
                     "registration": {
-                        "length": "24.98mm"
+                        "length": "26.84mm"
                     }
                 },
                 "borderless": {
@@ -143,7 +143,7 @@
                     "num_rows": 3,
                     "num_cols": 6,
                     "registration": {
-                        "length": "17.44mm"
+                        "length": "18.97mm"
                     }
                 }
             }
@@ -151,12 +151,12 @@
         "a3": {
             "standard_mtg": {
                 "default": {
-                    "orientation": "portrait",
+                    "orientation": "landscape",
                     "version": 1,
-                    "num_rows": 4,
-                    "num_cols": 4,
+                    "num_rows": 3,
+                    "num_cols": 6,
                     "registration": {
-                        "length": "19.05mm"
+                        "length": "6.6mm"
                     }
                 },
                 "borderless": {
@@ -165,18 +165,18 @@
                     "num_rows": 3,
                     "num_cols": 6,
                     "registration": {
-                        "length": "11.6mm"
+                        "length": "13.12mm"
                     }
                 }
             },
             "standard_sorcery": {
                 "default": {
-                    "orientation": "portrait",
+                    "orientation": "landscape",
                     "version": 1,
-                    "num_rows": 4,
-                    "num_cols": 4,
+                    "num_rows": 3,
+                    "num_cols": 6,
                     "registration": {
-                        "length": "19.05mm"
+                        "length": "6.6mm"
                     }
                 },
                 "borderless": {
@@ -185,7 +185,7 @@
                     "num_rows": 3,
                     "num_cols": 6,
                     "registration": {
-                        "length": "11.6mm"
+                        "length": "13.12mm"
                     }
                 }
             }
@@ -198,16 +198,16 @@
                     "num_rows": 3,
                     "num_cols": 6,
                     "registration": {
-                        "length": "23.62mm"
+                        "length": "25.15mm"
                     }
                 },
                 "borderless": {
-                    "orientation": "portrait",
+                    "orientation": "landscape",
                     "version": 1,
-                    "num_rows": 5,
-                    "num_cols": 4,
+                    "num_rows": 3,
+                    "num_cols": 7,
                     "registration": {
-                        "length": "18.8mm"
+                        "length": "14.39mm"
                     }
                 }
             },
@@ -218,16 +218,16 @@
                     "num_rows": 3,
                     "num_cols": 6,
                     "registration": {
-                        "length": "23.62mm"
+                        "length": "25.15mm"
                     }
                 },
                 "borderless": {
-                    "orientation": "portrait",
+                    "orientation": "landscape",
                     "version": 1,
-                    "num_rows": 5,
-                    "num_cols": 4,
+                    "num_rows": 3,
+                    "num_cols": 7,
                     "registration": {
-                        "length": "18.8mm"
+                        "length": "14.39mm"
                     }
                 }
             }
