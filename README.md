@@ -20,15 +20,15 @@ Extra card sizes for [Silhouette Card Maker](https://github.com/alan-cha/silhoue
    python create_pdf.py --help
    ```
 
-   Look at the `--card_size` line — you should see new card sizes listed. You can now use new card sizes like any built-in card size.
+   Look at the `--card_size` line — you should see new card sizes listed.
 
-   For example:
+4. Use the new card sizes. For example:
 
    ```shell
-   create_pdf.py --card_size mtg
+   python create_pdf.py --card_size mtg
    ```
 
-   You can find the appropriate cutting template in [cutting_templates](cutting_templates).
+   Then cut with the appropriate cutting template from [here](cutting_templates).
 
 ## Extra card sizes
 
@@ -44,54 +44,22 @@ Extra card sizes for [Silhouette Card Maker](https://github.com/alan-cha/silhoue
 
 ---
 
-## For maintainers: generating cutting templates
+## For maintainers
 
-This section is only relevant if you're adding a new card size or regenerating cutting templates — regular users don't need any of this.
+Extra card sizes are defined in [assets/layouts_extra.json](assets/layouts_extra.json). SCM has an opt-in extension point: every SCM script that loads layout config merges in extra card sizes/paper sizes/layouts:
 
-Extra card sizes are defined in `assets/layouts_extra.json`. SCM has an opt-in extension point: every SCM script that loads layout config (DXF generation, `.studio3` conversion, PDF creation, etc.) merges in extra card sizes/paper sizes/layouts from two places, with no changes to SCM's own tracked files:
-
-1. Any `*.json` file dropped into `silhouette-card-maker/assets/extra_layouts/` (this is what regular users do, per Setup above).
-2. Any file(s) listed in the `SCM_EXTRA_LAYOUTS` environment variable (`os.pathsep`-separated for more than one) — useful for a file that lives outside SCM's tree, like this repo's own `generate.py` below, which points it directly at `scm-extras/assets/layouts_extra.json` rather than requiring a copy step.
-
-`SCM_CUTTING_TEMPLATES_DIR` similarly redirects where SCM reads/writes `cutting_templates/` — `generate.py` sets both automatically for the commands it runs, so DXFs land in `scm-extras/cutting_templates/` instead of SCM's own.
-
-### Adding a new card size
-
-Add an entry to `assets/layouts_extra.json` under `card_sizes`:
-
-```json
-"my_game": {
-  "width": "2.5in",
-  "height": "3.5in",
-  "radius": "2.5mm",
-  "aliases": ["my_game_alias"]
-}
-```
+1. Any `*.json` file dropped into `silhouette-card-maker/assets/extra_layouts/`.
+2. Any file(s) listed in the `SCM_EXTRA_LAYOUTS` environment variable. Note the `SCM_CUTTING_TEMPLATES_DIR` environment variable as well.
 
 ### Generating DXF templates
 
-From this repo (same command in PowerShell or bash):
+From this repo:
 
+```shell
+python generate.py
 ```
-python generate.py        # generate missing DXF templates for extra card sizes
-python generate.py --all  # regenerate all
-```
-
-This calls SCM's `generate_dxf.py single --save` once per missing paper/card/variant combination, which both writes the DXF (into `scm-extras/cutting_templates/`) and persists the computed layout (orientation, rows/cols, registration) back into `assets/layouts_extra.json`.
-
-### Regenerating the README tables
-
-After running `generate.py` (so `assets/layouts_extra.json` has layout data to read), regenerate the two tables in the "Extra card sizes" section above:
-
-```
-python generate_readme_tables.py
-```
-
-This mirrors SCM's own `generate_readme_tables.py` (reusing its `format_number()` and `load_layout_config()` directly) but scoped to just this repo's extra card sizes. It prints markdown to stdout — paste the output over the existing tables above.
 
 ### Generating .studio3 files
-
-To produce `.studio3` files, run SCM's own batch converter with the same env vars pointed at this repo:
 
 **PowerShell:**
 ```powershell
@@ -102,11 +70,7 @@ python dxf_to_studio3.py batch --unit mm
 ```
 
 **bash:**
-```bash
+```shell
 cd ../silhouette-card-maker
 SCM_EXTRA_LAYOUTS=../scm-extras/assets/layouts_extra.json SCM_CUTTING_TEMPLATES_DIR=../scm-extras/cutting_templates python dxf_to_studio3.py batch --unit mm
 ```
-
-Note: unlike the bash form (scoped to just that one command), PowerShell's `$env:VAR = ...` persists for the rest of the session — clear it with `$env:SCM_CUTTING_TEMPLATES_DIR = $null` (or close the terminal) before running plain SCM commands that shouldn't redirect output.
-
-Other SCM tools (e.g. `create_pdf.py`) already see the extra sizes automatically once you've done Setup step 2 above (the file is sitting in `extra_layouts/`) — no env var needed for that. Set `SCM_CUTTING_TEMPLATES_DIR` the same way as above only if the tool reads/writes `cutting_templates/` and you want that redirected to this repo too.
