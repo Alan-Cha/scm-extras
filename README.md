@@ -1,6 +1,9 @@
-# scm-extras
+# Extra Templates for Silhouette Card Maker
 
-Extra card sizes for [Silhouette Card Maker](https://github.com/alan-cha/silhouette-card-maker): `mtg` (Magic: The Gathering) and `sorcery` (Sorcery: Contested Realm).
+Game-specific templates for [Silhouette Card Maker](https://github.com/alan-cha/silhouette-card-maker) including:
+
+* Magic: The Gathering
+* Sorcery: Contested Realm
 
 ## Setup
 
