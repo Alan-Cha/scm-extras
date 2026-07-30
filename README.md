@@ -17,19 +17,24 @@ Extra card sizes for [Silhouette Card Maker](https://github.com/alan-cha/silhoue
 3. Verify it worked. From `silhouette-card-maker`, run:
 
    ```
-   python generate_dxf.py list
+   python create_pdf.py --help
    ```
 
-   You should see `standard_mtg` and `standard_sorcery` (with aliases `mtg`/`sorcery`, etc.) in the card sizes list. SCM's normal commands will now accept `--card_size mtg` (or `sorcery`) just like any built-in card size — no environment variables or per-session setup needed.
+   Look at the `--card_size` line — you should see `mtg` and `sorcery` listed alongside the built-in sizes. You can now use `create_pdf.py --card_size mtg` (or `sorcery`) just like any built-in card size — no environment variables or per-session setup needed.
 
    Note: the `.studio3` conversion step further down (`dxf_to_studio3.py`) is Windows-only. On macOS/Linux you can still use the extra card sizes for PDF generation (`create_pdf.py`) etc., just not that step.
 
 ## Extra card sizes
 
-| Name | Dimensions | Corner radius | Game |
-|------|-----------|---------------|------|
-| `mtg` | 2.5 × 3.5 in | 2.5 mm | Magic: The Gathering |
-| `sorcery` | 2.61 × 3.74 in | 3.5 mm | Sorcery: Contested Realm |
+| Format | `letter` | `tabloid` | `a4` | `a3` | `arch_b` |
+|---|---|---|---|---|---|
+| `standard_mtg` | 4x2 (8) | 4x4 (16) | 4x2 (8) | 4x4 (16) | 6x3 (18) |
+| `standard_sorcery` | 4x2 (8) | 4x4 (16) | 4x2 (8) | 4x4 (16) | 6x3 (18) |
+
+| Card size | Inches | Millimeters | Aspect Ratio | Notes |
+| --- | --- | --- | --- | --- |
+| `standard_mtg` | **2.5 x 3.5** | 63.5 x 88.9 | 0.7143 | AKA `mtg`<br>AKA `magic`<br>AKA `magic_the_gathering` |
+| `standard_sorcery` | **2.5 x 3.5** | 63.5 x 88.9 | 0.7143 | AKA `sorcery`<br>AKA `sorcery_contested_realm` |
 
 ---
 
@@ -67,6 +72,16 @@ python generate.py --all  # regenerate all
 ```
 
 This calls SCM's `generate_dxf.py single --save` once per missing paper/card/variant combination, which both writes the DXF (into `scm-extras/cutting_templates/`) and persists the computed layout (orientation, rows/cols, registration) back into `assets/layouts-extra.json`.
+
+### Regenerating the README tables
+
+After running `generate.py` (so `assets/layouts-extra.json` has layout data to read), regenerate the two tables in the "Extra card sizes" section above:
+
+```
+python generate_readme_tables.py
+```
+
+This mirrors SCM's own `generate_readme_tables.py` (reusing its `format_number()` and `load_layout_config()` directly) but scoped to just this repo's extra card sizes. It prints markdown to stdout — paste the output over the existing tables above.
 
 ### Generating .studio3 files
 
