@@ -1,16 +1,236 @@
 {
-  "card_sizes": {
-    "mtg": {
-      "width": "2.5in",
-      "height": "3.5in",
-      "radius": "2.5mm",
-      "aliases": ["magic", "magic_the_gathering"]
+    "card_sizes": {
+        "standard_mtg": {
+            "width": "2.5in",
+            "height": "3.5in",
+            "radius": "2.5mm",
+            "aliases": [
+                "mtg",
+                "magic",
+                "magic_the_gathering"
+            ]
+        },
+        "standard_sorcery": {
+            "width": "2.5in",
+            "height": "3.5in",
+            "radius": "4.5mm",
+            "aliases": [
+                "sorcery",
+                "sorcery_contested_realm"
+            ]
+        }
     },
-    "sorcery": {
-      "width": "2.61in",
-      "height": "3.74in",
-      "radius": "3.5mm",
-      "aliases": ["sorcery_contested_realm"]
+    "paper_sizes": {},
+    "layouts": {
+        "letter": {
+            "standard_mtg": {
+                "default": {
+                    "orientation": "landscape",
+                    "version": 1,
+                    "num_rows": 2,
+                    "num_cols": 4,
+                    "registration": {
+                        "length": "7.2mm"
+                    }
+                },
+                "borderless": {
+                    "orientation": "portrait",
+                    "version": 1,
+                    "num_rows": 3,
+                    "num_cols": 3,
+                    "registration": {
+                        "length": "6.69mm"
+                    }
+                }
+            },
+            "standard_sorcery": {
+                "default": {
+                    "orientation": "landscape",
+                    "version": 1,
+                    "num_rows": 2,
+                    "num_cols": 4,
+                    "registration": {
+                        "length": "7.2mm"
+                    }
+                },
+                "borderless": {
+                    "orientation": "portrait",
+                    "version": 1,
+                    "num_rows": 3,
+                    "num_cols": 3,
+                    "registration": {
+                        "length": "6.69mm"
+                    }
+                }
+            }
+        },
+        "a4": {
+            "standard_mtg": {
+                "default": {
+                    "orientation": "landscape",
+                    "version": 1,
+                    "num_rows": 2,
+                    "num_cols": 4,
+                    "registration": {
+                        "length": "8.38mm"
+                    }
+                },
+                "borderless": {
+                    "orientation": "portrait",
+                    "version": 1,
+                    "num_rows": 3,
+                    "num_cols": 3,
+                    "registration": {
+                        "length": "9.14mm"
+                    }
+                }
+            },
+            "standard_sorcery": {
+                "default": {
+                    "orientation": "landscape",
+                    "version": 1,
+                    "num_rows": 2,
+                    "num_cols": 4,
+                    "registration": {
+                        "length": "8.38mm"
+                    }
+                },
+                "borderless": {
+                    "orientation": "portrait",
+                    "version": 1,
+                    "num_rows": 3,
+                    "num_cols": 3,
+                    "registration": {
+                        "length": "9.14mm"
+                    }
+                }
+            }
+        },
+        "tabloid": {
+            "standard_mtg": {
+                "default": {
+                    "orientation": "portrait",
+                    "version": 1,
+                    "num_rows": 4,
+                    "num_cols": 4,
+                    "registration": {
+                        "length": "24.98mm"
+                    }
+                },
+                "borderless": {
+                    "orientation": "landscape",
+                    "version": 1,
+                    "num_rows": 3,
+                    "num_cols": 6,
+                    "registration": {
+                        "length": "17.44mm"
+                    }
+                }
+            },
+            "standard_sorcery": {
+                "default": {
+                    "orientation": "portrait",
+                    "version": 1,
+                    "num_rows": 4,
+                    "num_cols": 4,
+                    "registration": {
+                        "length": "24.98mm"
+                    }
+                },
+                "borderless": {
+                    "orientation": "landscape",
+                    "version": 1,
+                    "num_rows": 3,
+                    "num_cols": 6,
+                    "registration": {
+                        "length": "17.44mm"
+                    }
+                }
+            }
+        },
+        "a3": {
+            "standard_mtg": {
+                "default": {
+                    "orientation": "portrait",
+                    "version": 1,
+                    "num_rows": 4,
+                    "num_cols": 4,
+                    "registration": {
+                        "length": "19.05mm"
+                    }
+                },
+                "borderless": {
+                    "orientation": "landscape",
+                    "version": 1,
+                    "num_rows": 3,
+                    "num_cols": 6,
+                    "registration": {
+                        "length": "11.6mm"
+                    }
+                }
+            },
+            "standard_sorcery": {
+                "default": {
+                    "orientation": "portrait",
+                    "version": 1,
+                    "num_rows": 4,
+                    "num_cols": 4,
+                    "registration": {
+                        "length": "19.05mm"
+                    }
+                },
+                "borderless": {
+                    "orientation": "landscape",
+                    "version": 1,
+                    "num_rows": 3,
+                    "num_cols": 6,
+                    "registration": {
+                        "length": "11.6mm"
+                    }
+                }
+            }
+        },
+        "arch_b": {
+            "standard_mtg": {
+                "default": {
+                    "orientation": "landscape",
+                    "version": 1,
+                    "num_rows": 3,
+                    "num_cols": 6,
+                    "registration": {
+                        "length": "23.62mm"
+                    }
+                },
+                "borderless": {
+                    "orientation": "portrait",
+                    "version": 1,
+                    "num_rows": 5,
+                    "num_cols": 4,
+                    "registration": {
+                        "length": "18.8mm"
+                    }
+                }
+            },
+            "standard_sorcery": {
+                "default": {
+                    "orientation": "landscape",
+                    "version": 1,
+                    "num_rows": 3,
+                    "num_cols": 6,
+                    "registration": {
+                        "length": "23.62mm"
+                    }
+                },
+                "borderless": {
+                    "orientation": "portrait",
+                    "version": 1,
+                    "num_rows": 5,
+                    "num_cols": 4,
+                    "registration": {
+                        "length": "18.8mm"
+                    }
+                }
+            }
+        }
     }
-  }
 }
