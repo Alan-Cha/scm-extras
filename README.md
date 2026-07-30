@@ -16,25 +16,31 @@ Extra card sizes for [Silhouette Card Maker](https://github.com/alan-cha/silhoue
 
 3. Verify it worked. From `silhouette-card-maker`, run:
 
-   ```
+   ```shell
    python create_pdf.py --help
    ```
 
-   Look at the `--card_size` line — you should see `mtg` and `sorcery` listed alongside the built-in sizes. You can now use `create_pdf.py --card_size mtg` (or `sorcery`) just like any built-in card size — no environment variables or per-session setup needed.
+   Look at the `--card_size` line — you should see new card sizes listed. You can now use new card sizes like any built-in card size.
 
-   Note: the `.studio3` conversion step further down (`dxf_to_studio3.py`) is Windows-only. On macOS/Linux you can still use the extra card sizes for PDF generation (`create_pdf.py`) etc., just not that step.
+   For example:
+
+   ```shell
+   create_pdf.py --card_size mtg
+   ```
+
+   You can find the appropriate cutting template in [cutting_templates](cutting_templates).
 
 ## Extra card sizes
-
-| Format | `letter` | `tabloid` | `a4` | `a3` | `arch_b` |
-|---|---|---|---|---|---|
-| `standard_mtg` | 4x2 (8) | 4x4 (16) | 4x2 (8) | 4x4 (16) | 6x3 (18) |
-| `standard_sorcery` | 4x2 (8) | 4x4 (16) | 4x2 (8) | 4x4 (16) | 6x3 (18) |
 
 | Card size | Inches | Millimeters | Aspect Ratio | Notes |
 | --- | --- | --- | --- | --- |
 | `standard_mtg` | **2.5 x 3.5** | 63.5 x 88.9 | 0.7143 | AKA `mtg`<br>AKA `magic`<br>AKA `magic_the_gathering` |
 | `standard_sorcery` | **2.5 x 3.5** | 63.5 x 88.9 | 0.7143 | AKA `sorcery`<br>AKA `sorcery_contested_realm` |
+
+| Format | `letter` | `tabloid` | `a4` | `a3` | `arch_b` |
+|---|---|---|---|---|---|
+| `standard_mtg` | 4x2 (8) | 4x4 (16) | 4x2 (8) | 4x4 (16) | 6x3 (18) |
+| `standard_sorcery` | 4x2 (8) | 4x4 (16) | 4x2 (8) | 4x4 (16) | 6x3 (18) |
 
 ---
 
