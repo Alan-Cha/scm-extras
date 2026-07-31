@@ -2,6 +2,11 @@
 """
 Generate DXF cutting templates for extra card sizes defined in assets/layouts_extra.json.
 
+Requires silhouette-card-maker to be a sister folder of this repo (see README Setup):
+    Documents/
+    ├── silhouette-card-maker/
+    └── scm-extras/
+
 Points SCM at this repo's assets/layouts_extra.json (SCM_EXTRA_LAYOUTS) and
 cutting_templates/ (SCM_CUTTING_TEMPLATES_DIR) via env vars, then runs generate_dxf.py's
 `single --save` once per missing paper/card/variant combination. `--save` persists
@@ -29,7 +34,7 @@ SCRIPT_DIR = Path(__file__).parent
 EXTRA_LAYOUTS = SCRIPT_DIR / "assets" / "layouts_extra.json"
 OUTPUT_DIR = SCRIPT_DIR / "cutting_templates"
 
-SCM_DIR = Path(__file__).parent.parent / "silhouette-card-maker"
+SCM_DIR = Path(__file__).parent.parent / "silhouette-card-maker"  # must be a sister folder
 GENERATE_DXF = SCM_DIR / "generate_dxf.py"
 
 PAPER_SIZES = ["letter", "a4", "tabloid", "a3", "arch_b"]
