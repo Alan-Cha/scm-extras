@@ -1,6 +1,8 @@
 # Extra Cutting Templates for Silhouette Card Maker
 
-[Silhouette Card Maker](https://github.com/alan-cha/silhouette-card-maker) is a tool for cutting cards with Silhouette cutting machines. SCM offers one-size-fits-all cutting templates but for those who want tailored-made templates such as ones designed for particular games, use the templates from this repo instead.
+[Silhouette Card Maker](https://github.com/alan-cha/silhouette-card-maker) is a tool for cutting cards with Silhouette cutting machines.
+
+SCM offers [one-size-fits-all cutting templates](https://github.com/Alan-Cha/silhouette-card-maker/tree/main/cutting_templates) but for those who want tailored-made templates such as ones designed for particular games, use the [templates from this repo](https://github.com/Alan-Cha/scm-extras/tree/main/cutting_templates) instead.
 
 Supported games:
 * Magic: The Gathering
@@ -8,7 +10,9 @@ Supported games:
 
 ## Basic Usage
 
-Most extra templates are based on [preexisting sizes](https://github.com/Alan-Cha/silhouette-card-maker#supported-sizes) supported by SCM. Simply generate the PDF normally but use the desired extra template to cut.
+Most extra templates are based on [preexisting sizes](https://github.com/Alan-Cha/silhouette-card-maker#supported-sizes) supported by SCM. 
+
+Simply generate the PDF normally but use the desired extra template to cut.
 
 For example, for MTG cards, generate a PDF with the `standard` card size but use a `standard_mtg` template to cut.
 
